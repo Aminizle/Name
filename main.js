@@ -12,7 +12,8 @@ function GetName() {
         document.querySelector('.gender').innerText = `Gender : ${data.gender}.`
         document.querySelector('.probability').innerText = `Probability : ${data.probability*100}%.`
         document.querySelector('.count').innerText = `Sample size : ${data.count} people named ${data.name} found.`
-        document.querySelector('.summary').innerText = `Based on a sample size of ${data.count} people named ${data.name}, we have calculated that the probability of ${data.name} being a ${data.gender} is ${data.probability*100}%.`
+        document.querySelector('.summary').innerText = `Summary :
+        Based on a sample size of ${data.count} people named ${data.name}, we have calculated that the probability of ${data.name} being a ${data.gender} is ${data.probability*100}%.`
 
     })
     .catch(err => {
