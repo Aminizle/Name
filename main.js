@@ -1,50 +1,43 @@
-document.querySelector('#btn').addEventListener('click', GetName)
+document.querySelector('#btn').addEventListener('click', getName)
 
+async function getData(url) {
+    const response = await fetch(url);
+    const data = await response.json();
+    return data;
+}
 
-async function GetName() {
+async function getName() {
     let name = document.querySelector('.input').value
+    let info = {};
 
-    fetch(`https://api.genderize.io?name=${name}`)
-    .then( res => res.json())
-    .then( data => {
-        console.log(data)
+    const getGeneral = await getData(`https://api.genderize.io?name=${name}`)
+    info.name = name;
+    info.gender = getGeneral.gender;
+    info.count = getGeneral.count;
 
-        document.querySelector('.name').innerText = `Name : ${name}.`
-        document.querySelector('.gender').innerText = `Gender : ${data.gender}.`
-        document.querySelector('.count').innerText = `Sample size : ${data.count} people named ${data.name} found.`
-      })
-
-      
-    //      todo 
-    //      get nationalize working 
-      
-        fetch(`https://api.nationalize.io/?name=${name}`)
-        .then( res => res.json())
-        .then( data2 => {
-            console.log(data2)
-            
-            document.querySelector('.country1').innerText = `country1 : ${data2.country}.`                    
-            document.querySelector('.country2').innerText = `country2 : ${country[2].country_id}.`           
-            document.querySelector('.country3').innerText = `country3 : ${country_id[2]}.`           
+    document.querySelector('.name').innerText = `Name : ${name}.`
+    document.querySelector('.gender').innerText = `Gender : ${info.gender}.`
+    document.querySelector('.count').innerText = `Sample size : ${info.count} people named ${info.name} found.`
 
 
-})
-        fetch(`https://api.agify.io/?name=${name}`)
-        .then( res => res.json())
-        .then( data3 => {
-            console.log(data3)
-    
-            document.querySelector('.age').innerText = `Age : ${data3.age}.`           
-                        
-})   
+    const getNationalize = await getData(`https://api.nationalize.io/?name=${name}`)
+    info.country1 = getNationalize.country[0].country_id;
+    info.country2 = getNationalize.country[1].country_id;
+    info.country3 = getNationalize.country[2].country_id;
 
- document.querySelector('.summary').innerText = `Summary :
-            Out of ${data.count} people named ${data.name}, ${data.probability*100}% were ${data.gender}.
-            Among the ${data.count} we found the most common age to be ${data3.age}.`
+    document.querySelector('.Country1').innerText = `Most likely country of origin : ${info.country1}.`
+    document.querySelector('.Country2').innerText = `Second most likely country of origin : ${info.country2}.`
+    document.querySelector('.Country3').innerText = `Third most likely country of origin : ${info.country3}.`
 
 
-    .catch(err => {
-        console.log(`error ${err}`)
-    });
-        
+    const getAge = await getData(`https://api.agify.io/?name=${name}`)
+    info.age = getAge.age;
+    document.querySelector('.age').innerText = `Age : ${info.age}.`
+
+
+    document.querySelector('.summary').innerText = `Summary :
+            Out of ${info.count} people named ${info.name}, ${info.probability * 100}% were ${info.gender}.
+            Among the ${info.count} we found the most common age to be ${info.age}.`
+
+
 }
