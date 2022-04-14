@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+
+:root {
+    background-color: #03a9f4;/* This is only to provide a colored background to the white icons. */
+    --overlay-color: #03a9f4;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.socialMenu {
+    /* position: absolute;    */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px;
+    top: 10px;
+}
+
+.socialMenu li {
+    list-style: none;
+}
+
+.socialMenu li a {
+    display: inline-block;
+    color: #fff;
+    margin-right: 20px;
+    transform: scale(1.5);
+    transition: 0.5s;
+}
+
+.socialMenu li a:hover {
+    transform: scale(2) translateY(-10px);
+}
