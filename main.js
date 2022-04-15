@@ -35,9 +35,9 @@ async function getName() {
     document.querySelector('.age').innerText = `Age : ${info.age}.`
 
 
-    document.querySelector('.summary').innerText = `Summary :
-            Out of ${info.count} people named ${info.name}, ${info.probability * 100}% were ${info.gender}.
-            Among the ${info.count} we found the most common age to be ${info.age}.`
+    // document.querySelector('.summary').innerText = `Summary :
+    //         Out of ${info.count} people named ${info.name}, ${info.probability * 100}% were ${info.gender}.
+    //         Among the ${info.count} we found the most common age to be ${info.age}.`
 
 
 }

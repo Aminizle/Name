@@ -34,6 +34,11 @@ body {
     align-items: center;
 }
 
+input {
+    margin-left: 20px;
+    margin-right: 5px;
+    height: 38px;
+}
 
 .cards {
     display: grid;
