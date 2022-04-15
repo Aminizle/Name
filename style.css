@@ -2,13 +2,13 @@
 
 :root {
     --overlay-color: #03a9f4;
-    
-    
+
+
 }
 
 body {
-    background: rgb(238,174,202);
-    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+    background: rgb(238, 174, 202);
+    background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
     font-family: 'Poppins', sans-serif;
 }
 
@@ -16,7 +16,7 @@ body {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    
+
 }
 
 .head {
@@ -24,10 +24,10 @@ body {
     direction: column;
     justify-content: space-around;
     align-items: center;
-    
+
 }
 
-.analyzer {    
+.analyzer {
     display: flex;
     direction: row;
     justify-content: center;
@@ -49,6 +49,8 @@ input {
 
 .card-header {
     background-color: #94bbe9;
+    margin: 0;
+    padding: 15px;
 }
 
 .carousel-inner {
@@ -58,7 +60,8 @@ input {
     /* align-items: flex-start; */
 }
 
-.list-group-item, .list-group-flush {
+.list-group-item,
+.list-group-flush {
     background-color: #eeaeca;
     margin: 0;
     padding: 15px;
@@ -92,17 +95,17 @@ h3 {
 
 h5 {
     font-family: 'Updock', cursive;
-    font-size: 5em;    
+    font-size: 5em;
     font-weight: 800;
     line-height: 1em;
-      
+
 }
 
 p {
     font-size: 5em;
     margin: 20px 0;
     font-weight: 400;
-    max-width: 700px;    
+    max-width: 700px;
     line-height: 1em;
 }
 
@@ -111,8 +114,8 @@ p {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding: 10px;
-    top: 10px;
+    padding: 50px 0px;
+    top: 30px;
 }
 
 .socialMenu li {
@@ -131,4 +134,3 @@ p {
     transform: scale(2) translateY(-10px);
     color: #eeaeca;
 }
-
