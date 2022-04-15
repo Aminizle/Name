@@ -15,9 +15,9 @@ async function getName() {
     info.gender = getGeneral.gender;
     info.count = getGeneral.count;
 
-    document.querySelector('.name').innerText = `Name : ${name}.`
-    document.querySelector('.gender').innerText = `Gender : ${info.gender}.`
-    document.querySelector('.count').innerText = `Sample size : ${info.count} people named ${info.name} found.`
+    document.querySelector('.name').innerText = `Name : ${name}`
+    document.querySelector('.gender').innerText = `Gender : ${info.gender}`
+    // document.querySelector('.count').innerText = `Sample size : ${info.count} people named ${info.name} found`
 
 
     const getNationalize = await getData(`https://api.nationalize.io/?name=${name}`)
@@ -25,14 +25,14 @@ async function getName() {
     info.country2 = getNationalize.country[1].country_id;
     info.country3 = getNationalize.country[2].country_id;
 
-    document.querySelector('.Country1').innerText = `Most likely country of origin : ${info.country1}.`
-    document.querySelector('.Country2').innerText = `Second most likely country of origin : ${info.country2}.`
-    document.querySelector('.Country3').innerText = `Third most likely country of origin : ${info.country3}.`
+    document.querySelector('.Country1').innerText = `Most likely country of origin : ${info.country1}`
+    document.querySelector('.Country2').innerText = `2nd most likely country of origin : ${info.country2}`
+    document.querySelector('.Country3').innerText = `3rd most likely country of origin : ${info.country3}`
 
 
     const getAge = await getData(`https://api.agify.io/?name=${name}`)
     info.age = getAge.age;
-    document.querySelector('.age').innerText = `Age : ${info.age}.`
+    document.querySelector('.age').innerText = `Age : ${info.age}`
 
 
     // document.querySelector('.summary').innerText = `Summary :
